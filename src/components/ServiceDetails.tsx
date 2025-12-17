@@ -1,5 +1,5 @@
 import React from 'react';
-import { Clock, Check, ArrowRight } from 'lucide-react';
+import { Clock, Check, } from 'lucide-react';
 
 const ServiceDetails: React.FC = () => {
   return (
