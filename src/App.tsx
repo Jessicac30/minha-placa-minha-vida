@@ -5,7 +5,8 @@ import ServiceDetails from './components/ServiceDetails';
 import HowItWorks from './components/HowItWorks';
 import Warranty from './components/Warranty';
 import Testimonials from './components/Testimonials';
-import FAQ from './components/FAQ'; 
+import FAQ from './components/FAQ';
+import AdvancedDiagnostic from './components/AdvancedDiagnostic'; 
 
 function App() {
   return (
@@ -19,7 +20,8 @@ function App() {
         <HowItWorks />
         <Warranty />
         <Testimonials />
-        <FAQ /> 
+        <FAQ />
+        <AdvancedDiagnostic /> 
       </main>
     </div>
   );
