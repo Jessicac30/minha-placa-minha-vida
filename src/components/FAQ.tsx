@@ -31,7 +31,14 @@ const faqItems: FAQItem[] = [
 
 const FAQ: React.FC = () => {
   return (
-    <section id="duvidas" aria-label="Dúvidas Frequentes">
+    // CORREÇÃO AQUI:
+    // 1. id="faq" (para bater com o link do menu)
+    // 2. className="scroll-mt-32" (para o título não ficar escondido atrás do menu)
+    <section 
+      id="faq" 
+      className="scroll-mt-32" 
+      aria-label="Dúvidas Frequentes"
+    >
       <div className="bg-bg-component rounded-3xl border border-white/10 p-8 md:p-12 shadow-2xl relative overflow-hidden">
         
         <div className="text-center mb-12 relative z-10">
@@ -47,11 +54,6 @@ const FAQ: React.FC = () => {
           {faqItems.map((item) => (
             <div 
               key={item.id}
-              /* ACESSIBILIDADE (MOTION):
-                  'motion-reduce:transition-none' e 'motion-reduce:hover:transform-none'.
-                 Se o usuário tiver "Reduzir Movimento" ativado no Windows/Mac/Android, 
-                 o card fica PARADO, sem causar tontura.
-              */
               className="bg-bg-body border border-white/5 rounded-2xl p-8 hover:border-brand-green/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-brand-green/5 text-left motion-reduce:transition-none motion-reduce:hover:transform-none"
             >
               <h3 className="text-xl font-bold text-white mb-3">
