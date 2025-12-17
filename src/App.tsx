@@ -5,6 +5,7 @@ import ServiceDetails from './components/ServiceDetails';
 import HowItWorks from './components/HowItWorks';
 import Warranty from './components/Warranty';
 import Testimonials from './components/Testimonials';
+import FAQ from './components/FAQ'; 
 
 function App() {
   return (
@@ -17,7 +18,8 @@ function App() {
         <ServiceDetails />
         <HowItWorks />
         <Warranty />
-        <Testimonials /> 
+        <Testimonials />
+        <FAQ /> 
       </main>
     </div>
   );
