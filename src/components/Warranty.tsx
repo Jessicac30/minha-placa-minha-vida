@@ -37,7 +37,12 @@ const warrantyItems: WarrantyItem[] = [
 
 const Warranty: React.FC = () => {
   return (
-    <section id="garantia" aria-label="Garantia e Segurança">
+    // ADICIONEI AQUI: className="scroll-mt-[200px]"
+    <section 
+      id="garantia" 
+      aria-label="Garantia e Segurança"
+      className="scroll-mt-[200px]"
+    >
       {/* Container Principal "Bloco de Vidro" */}
       <div className="bg-bg-component rounded-3xl border border-white/10 p-8 md:p-12 shadow-2xl relative overflow-hidden">
         
@@ -51,7 +56,7 @@ const Warranty: React.FC = () => {
           </p>
         </div>
 
-        {/* Grid de 4 Colunas (1 no mobile, 2 no tablet, 4 no desktop) */}
+        {/* Grid de 4 Colunas */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
           {warrantyItems.map((item) => (
             <div 
