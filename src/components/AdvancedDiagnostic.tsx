@@ -111,8 +111,8 @@ const AdvancedDiagnostic: React.FC = () => {
       const technicianPhone = "5511999999999"; 
 
       // Monta a mensagem formatada
-      const message = `Olá, meu ${formData.equipamento} ${formData.modelo} está com ${formData.problema}. Gostaria de um orçamento para o serviço de ${formData.servico}.`;
-      const signature = `\n\n(Me chamo ${formData.nome} - ${formData.email})`;
+      const message = `Olá, meu ${formData.equipamento} ${formData.modelo} está com o problema: ${formData.problema}. Gostaria de um orçamento para o serviço de ${formData.servico}.`;
+      const signature = `\n\nMe chamo ${formData.nome} e meu e-mail é ${formData.email}`;
       const finalMessage = message + signature;
       const whatsappUrl = `https://wa.me/${technicianPhone}?text=${encodeURIComponent(finalMessage)}`;
 
@@ -261,7 +261,6 @@ const AdvancedDiagnostic: React.FC = () => {
                     onChange={handleChange}
                     onBlur={handleBlur}
                     maxLength={60}
-                    // 4. ALTERADO: Placeholder agora é só "Nome"
                     placeholder="Nome"
                     className={`w-full bg-[#111] border rounded-lg px-4 py-3 text-white placeholder-gray-600 focus:outline-none transition-colors text-sm
                       ${touched.nome && errors.nome ? 'border-red-500 focus:border-red-500' : 'border-white/10 focus:border-brand-green'}`}
