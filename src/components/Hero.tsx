@@ -4,8 +4,6 @@ const Hero: React.FC = () => {
   return (
     <section 
       aria-label="Introdução e Diagnóstico"
-      // AJUSTE 1: Mudei 'p-8' para 'p-6'. 
-      // Isso dá mais espaço para o texto respirar em celulares estreitos.
       className="bg-bg-component rounded-3xl border border-white/10 shadow-xl p-6 md:p-12 mb-10 relative overflow-hidden min-h-[550px] flex items-center"
     >
       
@@ -37,19 +35,12 @@ const Hero: React.FC = () => {
             bg-brand-orange/10 backdrop-blur-sm 
             max-w-full whitespace-nowrap
           ">
-            {/* AJUSTE 2: 
-               - tracking-normal: Letras normais no mobile (cabe mais texto).
-               - sm:tracking-widest: Espaçado no PC.
-               - px-3: Borda mais fina no mobile.
-            */}
+         
             <span className="text-[0.6rem] shrink-0" aria-hidden="true">●</span> 
             <span>Não vendemos peças, vendemos soluções</span>
           </div>
           
-          {/* AJUSTE 3: TÍTULO RESPONSIVO
-             - text-3xl: Base menor para não quebrar "equipamento" errado.
-             - sm:text-5xl: Volta a ser grande em celulares normais/Tablets.
-          */}
+        
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white mb-6 leading-[1.1]">
             Não condene seu equipamento. <span className="text-brand-highlight">Nós recuperamos!</span>
           </h1>

@@ -35,10 +35,7 @@ function App() {
       <main className="container mx-auto px-6 relative space-y-12 mb-20">
         <Hero />
         
-        {/* 4. AQUI: Passamos a função para o botão "Ver Detalhes" ativar a nova página */}
         <ServiceDetails onDetailsClick={() => setShowLanding(true)} />
-        {/* Mantive o ServiceDetails aqui pois você pediu para não retirar,
-            mas verifique se ele não fica repetitivo com a página nova */}
                
         <HowItWorks />
         <Warranty />

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Check, AlertCircle } from 'lucide-react';
+import { Check, AlertCircle, Lock } from 'lucide-react';
+import { useToast } from '../contexts/ToastContext'; 
 
 const benefits = [
   "Orçamento sem compromisso",
@@ -26,6 +27,9 @@ interface FormErrors {
 }
 
 const AdvancedDiagnostic: React.FC = () => {
+  // 2. IMPORTANTE: Ativamos a função de aviso
+  const { addToast } = useToast();
+
   const [formData, setFormData] = useState<FormData>({
     equipamento: '',
     servico: '',
@@ -38,7 +42,6 @@ const AdvancedDiagnostic: React.FC = () => {
   const [errors, setErrors] = useState<FormErrors>({});
   const [touched, setTouched] = useState<Record<string, boolean>>({});
 
-  // Validação simples de e-mail
   const validateEmail = (email: string) => {
     return /\S+@\S+\.\S+/.test(email);
   };
@@ -95,7 +98,6 @@ const AdvancedDiagnostic: React.FC = () => {
       const value = formData[field as keyof FormData];
       validateField(field, value);
       
-      // Checagem extra na hora do envio
       if (!value || 
          (field === 'problema' && value.length < 10) || 
          (field === 'nome' && value.length < 3) ||
@@ -106,25 +108,24 @@ const AdvancedDiagnostic: React.FC = () => {
     });
 
     if (!hasError) {
-      // --- LÓGICA DE ENVIO DO WHATSAPP ---
-      
       const technicianPhone = "5511999999999"; 
 
-      const text = 
-`*Nova Solicitação de Diagnóstico* 🛠️
+      // Monta a mensagem formatada
+      const message = `Olá, meu ${formData.equipamento} ${formData.modelo} está com ${formData.problema}. Gostaria de um orçamento para o serviço de ${formData.servico}.`;
+      const signature = `\n\n(Me chamo ${formData.nome} - ${formData.email})`;
+      const finalMessage = message + signature;
+      const whatsappUrl = `https://wa.me/${technicianPhone}?text=${encodeURIComponent(finalMessage)}`;
 
-👤 *Cliente:* ${formData.nome}
-📧 *E-mail:* ${formData.email}
+      // 3. IMPORTANTE: Mostra o aviso VERDE e espera 2 segundos
+      addToast('Redirecionando para o WhatsApp...', 'success');
 
-💻 *Equipamento:* ${formData.equipamento}
-🔖 *Modelo:* ${formData.modelo}
-🔧 *Serviço:* ${formData.servico}
-
-📝 *Descrição do Problema:*
-${formData.problema}`;
-
-      const whatsappUrl = `https://wa.me/${technicianPhone}?text=${encodeURIComponent(text)}`;
-      window.open(whatsappUrl, '_blank');
+      setTimeout(() => {
+        window.open(whatsappUrl, '_blank');
+      }, 2000);
+      
+    } else {
+      // Se houver erro, mostra aviso VERMELHO
+      addToast('Por favor, corrija os erros no formulário.', 'error');
     }
   };
 
@@ -241,7 +242,7 @@ ${formData.problema}`;
                 />
                 <div className="flex justify-between mt-1">
                   {touched.problema && errors.problema ? (
-                     <p className="text-xs text-red-400 flex items-center"><AlertCircle size={12} className="mr-1"/>{errors.problema}</p>
+                      <p className="text-xs text-red-400 flex items-center"><AlertCircle size={12} className="mr-1"/>{errors.problema}</p>
                   ) : <span></span>}
                   <span className="text-[10px] text-gray-600">{formData.problema.length}/500</span>
                 </div>
@@ -260,7 +261,8 @@ ${formData.problema}`;
                     onChange={handleChange}
                     onBlur={handleBlur}
                     maxLength={60}
-                    placeholder="Nome completo"
+                    // 4. ALTERADO: Placeholder agora é só "Nome"
+                    placeholder="Nome"
                     className={`w-full bg-[#111] border rounded-lg px-4 py-3 text-white placeholder-gray-600 focus:outline-none transition-colors text-sm
                       ${touched.nome && errors.nome ? 'border-red-500 focus:border-red-500' : 'border-white/10 focus:border-brand-green'}`}
                   />
@@ -296,6 +298,12 @@ ${formData.problema}`;
               >
                 Solicitar Análise no WhatsApp
               </button>
+
+              {/* Aviso de Privacidade */}
+              <div className="flex items-center justify-center gap-2 mt-4 text-gray-500">
+                <Lock size={14} className="text-yellow-600/90" aria-hidden="true" />
+                <p className="text-[10px] md:text-xs text-gray-400 font-medium">Seus dados são usados apenas para o atendimento.</p>
+              </div>
 
             </form>
           </div>
