@@ -1,7 +1,12 @@
 import React from 'react';
-import { Clock, Check, } from 'lucide-react';
+import { Clock, Check } from 'lucide-react';
 
-const ServiceDetails: React.FC = () => {
+// 1. Definimos que o componente aceita uma função chamada 'onDetailsClick'
+interface ServiceDetailsProps {
+  onDetailsClick: () => void;
+}
+
+const ServiceDetails: React.FC<ServiceDetailsProps> = ({ onDetailsClick }) => {
   return (
     <section id="detalhes" className="relative z-10">
       
@@ -58,13 +63,13 @@ const ServiceDetails: React.FC = () => {
               ))}
             </ul>
 
-            {/* Botão de Ação */}
-            <a 
-              href="#contato" 
-              className="w-full md:w-auto inline-flex justify-center items-center gap-2 bg-brand-orange text-white px-8 py-4 rounded-lg font-bold uppercase tracking-wider hover:bg-brand-orangeHover transition-all hover:-translate-y-1 shadow-lg shadow-brand-orange/20"
+            {/* 2. Botão de Ação (MODIFICADO PARA CLICK) */}
+            <button 
+              onClick={onDetailsClick} // <--- AQUI ESTÁ A CORREÇÃO
+              className="w-full md:w-auto inline-flex justify-center items-center gap-2 bg-brand-orange text-white px-8 py-4 rounded-lg font-bold uppercase tracking-wider hover:bg-brand-orange/90 transition-all hover:-translate-y-1 shadow-lg shadow-brand-orange/20 cursor-pointer"
             >
               Ver Detalhes do Serviço
-            </a>
+            </button>
           </div>
 
         </div>
