@@ -24,7 +24,7 @@ export default {
         }
       },
       fontFamily: {
-        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+        sans: ['"Plus Jakarta Sans"', '"Plus Jakarta Sans Fallback"', 'system-ui', 'sans-serif'],
       },
       backgroundImage: {
         'hero-pattern': "radial-gradient(circle at center top, #1c2128 0%, #0d1117 100%)",
