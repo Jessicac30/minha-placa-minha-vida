@@ -43,7 +43,7 @@ const testimonials: TestimonialItem[] = [
 
 const Testimonials: React.FC = () => {
   return (
-    <section id="depoimentos" aria-label="Depoimentos de Clientes">
+    <section id="depoimentos" className="scroll-mt-40" aria-label="Depoimentos de Clientes">
       <div className="bg-bg-component rounded-3xl border border-white/10 p-8 md:p-12 shadow-2xl relative overflow-hidden">
         
         <div className="text-center mb-12 relative z-10">

@@ -2,7 +2,7 @@
 export default {
   content: [
     "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}", // Note que agora ele busca por .tsx e .ts também
+    "./src/**/*.{js,ts,jsx,tsx}", 
   ],
   theme: {
     extend: {

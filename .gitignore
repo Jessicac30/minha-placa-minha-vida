@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Presentation materials (personal preparation)
+ROTEIRO_VISUAL_APRESENTACAO.md

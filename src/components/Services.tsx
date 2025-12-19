@@ -31,7 +31,7 @@ const services: ServiceItem[] = [
 
 const Services: React.FC = () => {
   return (
-    <section id="servicos" aria-label="Nossos Serviços">
+    <section id="servicos" className="scroll-mt-40" aria-label="Nossos Serviços">
       
       <div className="bg-bg-component rounded-3xl border border-white/10 p-8 md:p-12 lg:p-16 shadow-2xl relative overflow-hidden">
         

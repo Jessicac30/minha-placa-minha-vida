@@ -31,12 +31,9 @@ const faqItems: FAQItem[] = [
 
 const FAQ: React.FC = () => {
   return (
-    // CORREÇÃO AQUI:
-    // 1. id="faq" (para bater com o link do menu)
-    // 2. className="scroll-mt-32" (para o título não ficar escondido atrás do menu)
-    <section 
-      id="faq" 
-      className="scroll-mt-32" 
+    <section
+      id="faq"
+      className="scroll-mt-40"
       aria-label="Dúvidas Frequentes"
     >
       <div className="bg-bg-component rounded-3xl border border-white/10 p-8 md:p-12 shadow-2xl relative overflow-hidden">

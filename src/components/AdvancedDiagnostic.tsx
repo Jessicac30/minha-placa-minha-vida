@@ -130,7 +130,7 @@ const AdvancedDiagnostic: React.FC = () => {
   };
 
   return (
-    <section id="diagnostico" aria-label="Diagnóstico Avançado">
+    <section id="diagnostico" className="scroll-mt-40" aria-label="Diagnóstico Avançado">
       <div className="bg-bg-component rounded-3xl border border-white/10 p-8 md:p-12 shadow-2xl relative overflow-hidden">
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 relative z-10">
