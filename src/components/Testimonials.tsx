@@ -90,7 +90,9 @@ const Testimonials: React.FC = () => {
               <div className="flex items-center gap-4 mt-auto">
                 <img 
                   src={item.image} 
-                  alt={`Foto de ${item.name}`} // Acessibilidade: Descrição da imagem
+                  alt={`Foto de ${item.name}`}
+                  width={48}
+                  height={48}
                   className="w-12 h-12 rounded-full object-cover border-2 border-brand-green shrink-0"
                 />
                 

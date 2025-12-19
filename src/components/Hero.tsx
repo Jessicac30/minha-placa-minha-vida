@@ -81,6 +81,10 @@ const Hero: React.FC = () => {
           <img 
             src="/logo.png" 
             alt="Mascote da Minha Placa: uma casinha tecnológica com chips eletrônicos" 
+            width={600}
+            height={600}
+            fetchPriority="high"
+            decoding="async"
             className="w-full h-auto max-w-[400px] lg:max-w-[600px] drop-shadow-2xl animate-float motion-reduce:animate-none object-contain" 
           />
         </div>

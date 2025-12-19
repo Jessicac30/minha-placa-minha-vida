@@ -59,6 +59,9 @@ const ServiceLanding: React.FC<ServiceLandingProps> = ({ onBack }) => {
               <img 
                 src="https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?q=80&w=1000&auto=format&fit=crop" 
                 alt="Close-up de um Processador Ryzen instalado em uma placa-mãe de alta performance" 
+                width={1000}
+                height={667}
+                loading="lazy"
                 className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
               />
             </div>

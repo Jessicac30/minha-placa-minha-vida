@@ -29,6 +29,8 @@ const Header: React.FC = () => {
              <img 
                src="/logo.png" 
                alt="Logo Minha Placa" 
+               width={48}
+               height={48}
                className="h-10 md:h-12 w-auto group-hover:scale-110 transition-transform object-contain" 
              /> 
              
