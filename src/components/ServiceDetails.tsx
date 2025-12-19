@@ -1,7 +1,7 @@
 import React from 'react';
 import { Clock, Check } from 'lucide-react';
 
-// 1. Definimos que o componente aceita uma função chamada 'onDetailsClick'
+
 interface ServiceDetailsProps {
   onDetailsClick: () => void;
 }
@@ -21,10 +21,13 @@ const ServiceDetails: React.FC<ServiceDetailsProps> = ({ onDetailsClick }) => {
             {/* Efeito de brilho atrás da imagem */}
             <div className="absolute -inset-1 bg-gradient-to-r from-brand-orange to-brand-green opacity-20 group-hover:opacity-40 blur transition duration-500 rounded-2xl"></div>
             
-            <img 
-              src="/placa-mae.png" 
-              alt="Processador Ryzen em placa mãe sendo reparada" 
+            <img
+              src="/placa-mae.png"
+              alt="Processador Ryzen em placa mãe sendo reparada"
               className="relative w-full h-full object-cover rounded-2xl shadow-2xl border border-white/10"
+              width="600"
+              height="400"
+              loading="lazy"
             />
           </div>
 
@@ -63,10 +66,10 @@ const ServiceDetails: React.FC<ServiceDetailsProps> = ({ onDetailsClick }) => {
               ))}
             </ul>
 
-            {/* 2. Botão de Ação (MODIFICADO PARA CLICK) */}
-            <button 
-              onClick={onDetailsClick} // <--- AQUI ESTÁ A CORREÇÃO
-              className="w-full md:w-auto inline-flex justify-center items-center gap-2 bg-brand-orange text-white px-8 py-4 rounded-lg font-bold uppercase tracking-wider hover:bg-brand-orange/90 transition-all hover:-translate-y-1 shadow-lg shadow-brand-orange/20 cursor-pointer"
+            <button
+              onClick={onDetailsClick}
+              aria-label="Ver detalhes completos do serviço de conserto de placa-mãe"
+              className="w-full md:w-auto inline-flex justify-center items-center gap-2 bg-brand-orange text-white px-8 py-4 rounded-lg font-bold uppercase tracking-wider hover:bg-brand-orange/90 transition-all hover:-translate-y-1 shadow-lg shadow-brand-orange/20 cursor-pointer focus:outline-none focus:ring-4 focus:ring-brand-orange/50"
             >
               Ver Detalhes do Serviço
             </button>

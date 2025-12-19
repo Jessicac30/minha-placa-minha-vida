@@ -13,7 +13,13 @@ const Header: React.FC = () => {
 
   return (
     <header className="fixed top-5 left-0 right-0 z-50 flex justify-center w-full">
-      
+      {/* Skip to main content - Acessibilidade */}
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[9999] focus:px-6 focus:py-3 focus:bg-brand-orange focus:text-white focus:rounded-lg focus:font-bold focus:shadow-lg"
+      >
+        Pular para o conteúdo principal
+      </a>
 
       <div className="container mx-auto px-6">
         <div className="w-full bg-[#131117]/80 backdrop-blur-xl py-3 px-6 md:px-8 lg:px-16 rounded-full border border-white/20 shadow-[0_0_30px_-10px_rgba(255,255,255,0.2)] flex justify-between items-center transition-all duration-300 relative">

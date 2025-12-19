@@ -28,8 +28,8 @@ function App() {
   return (
     <div className="bg-hero-pattern min-h-screen pt-32 pb-0 overflow-x-hidden">
       <Header />
-      
-      <main className="container mx-auto px-6 relative space-y-12 mb-20">
+
+      <main id="main-content" className="container mx-auto px-6 relative space-y-12 mb-20">
         <Hero />
         <Services />
         <ServiceDetails onDetailsClick={() => setShowLanding(true)} />
