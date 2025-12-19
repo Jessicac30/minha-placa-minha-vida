@@ -401,7 +401,7 @@ Auditoria completa realizada com **Google Lighthouse** (Chrome DevTools) em ambi
 
 ![Resultados Lighthouse](./public/performance.png)
 
-
+---
 
 ## 📝 Licença
 
