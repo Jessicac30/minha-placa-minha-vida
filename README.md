@@ -401,14 +401,7 @@ Auditoria completa realizada com **Google Lighthouse** (Chrome DevTools) em ambi
 
 ![Resultados Lighthouse](./public/performance.png)
 
-### 📈 Scores Obtidos
 
-| Categoria | Score | Status | Destaques |
-|-----------|-------|--------|-----------|
-| ⚡ **Performance** | 64→90/100* | 🟢 Excelente | Otimização de imagens (-57.8% de peso) |
-| ♿ **Accessibility** | 92/100 | 🟢 Excelente | ARIA labels, Semantic HTML, WCAG AA |
-| ✅ **Best Practices** | 77/100 | 🟡 Bom | TypeScript strict, ESLint configurado |
-| 🔍 **SEO** | 92/100 | 🟢 Ótimo | Meta tags completas, Open Graph, Structured data |
 
 ## 📝 Licença
 
